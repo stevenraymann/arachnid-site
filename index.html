@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arachnid Networks | We Build the Web That Finds Your Customers</title>
+    <meta name="description" content="Professional websites for Gulf Coast businesses. $250 gets you online with a year of hosting. Same-day deployment available. Serving Mobile, Pensacola, and Biloxi.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+        }
+
+        .tagline {
+            font-size: 0.75rem;
+            opacity: 0.9;
+            font-weight: 400;
+            margin-top: 0.2rem;
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #e94560;
+        }
+
+        .nav-cta {
+            background: #e94560;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: rgba(233, 69, 96, 0.2);
+            border: 2px solid #e94560;
+            color: #ff6b6b;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .hero-slogan {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #e94560;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: #e94560;
+            color: white;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(233, 69, 96, 0.5);
+            background: #ff6b6b;
+        }
+
+        .cta-button-secondary {
+            background: transparent;
+            border: 2px solid white;
+            box-shadow: none;
+        }
+
+        .cta-button-secondary:hover {
+            background: white;
+            color: #16213e;
+            transform: translateY(-3px);
+        }
+
+        .trust-bar {
+            background: #e94560;
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #1a1a2e;
+            font-weight: 800;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-color: #e94560;
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #16213e;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .pricing {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .pricing-highlight {
+            background: linear-gradient(135deg, #e94560 0%, #c93b54 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            border: 3px solid #e94560;
+            position: relative;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            background: #e94560;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .price-container {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .price {
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: #e94560;
+            line-height: 1;
+        }
+
+        .price-subtext {
+            color: #666;
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .price-comparison {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features li:before {
+            content: "✓";
+            color: #e94560;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .value-prop {
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #e94560 0%, #c93b54 100%);
+            color: white;
+            border-radius: 12px;
+        }
+
+        .value-prop-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-prop-text {
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+
+        .process {
+            background: white;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #e94560 0%, #c93b54 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 20px rgba(233, 69, 96, 0.3);
+        }
+
+        .process-step h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #16213e;
+        }
+
+        .process-step p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .credibility {
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .credibility-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .credibility h2 {
+            color: white;
+        }
+
+        .credibility-stat {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #e94560;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid rgba(233, 69, 96, 0.3);
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            background: rgba(233, 69, 96, 0.1);
+            border-color: #e94560;
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #e94560;
+        }
+
+        .contact-card a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .contact-card a:hover {
+            color: #ff6b6b;
+        }
+
+        .service-area {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .availability-badge {
+            display: inline-block;
+            background: #28a745;
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            background: #0a0a14;
+            color: white;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            border-top: 2px solid #e94560;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-tagline {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #e94560;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-slogan {
+                font-size: 1.3rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .price {
+                font-size: 3.5rem;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+            }
+
+            .cta-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">🕷️</div>
+                <div>
+                    <div>Arachnid Networks</div>
+                    <div class="tagline">We build the web that finds your customers</div>
+                </div>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#why">Why Us</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#process">How It Works</a></li>
+                    <li><a href="#contact" class="nav-cta">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-label">Gulf Coast's Web Development Partner</div>
+            <h1>Your Business Needs to Be Online. Yesterday.</h1>
+            <p class="hero-slogan">"We build the web that finds your customers."</p>
+            <p>Professional website + one year of hosting for just $250. No hidden fees. No contracts. Same-day deployment available.</p>
+            <div class="hero-cta-group">
+                <a href="tel:+12514855686" class="cta-button">Call Now: (251) 485-5686</a>
+                <a href="#pricing" class="cta-button cta-button-secondary">See What You Get</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="trust-bar">
+        ⚡ Same-Day Deployment Available | 📍 Serving Mobile, Pensacola & Biloxi | 🛡️ Big-Company Experience | 📞 Direct Support
+    </div>
+
+    <section id="why" class="section">
+        <h2 class="section-title">Why Choose Arachnid Networks?</h2>
+        <p class="section-subtitle">We bring enterprise-level expertise to small business pricing. Your website shouldn't cost more than your monthly rent.</p>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Same-Day Deployment</h3>
+                <p>Need to be online today? We can make it happen. Most sites go live within 24-48 hours. No weeks-long waiting periods.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Unbeatable Value</h3>
+                <p>$250 total. That's less than most "web designers" charge for a consultation. You get a complete website plus hosting for a full year.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Built to Convert</h3>
+                <p>A pretty website is worthless if it doesn't bring in customers. We build sites that actually get you business.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Mobile-First Design</h3>
+                <p>80% of your customers will find you on their phone. Your site will look perfect on every device, every time.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure & Reliable</h3>
+                <p>Enterprise-grade hosting on Microsoft Azure. SSL certificates included. Your site stays up when your competitors go down.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📞</div>
+                <h3>Direct Support</h3>
+                <p>Questions? Need an update? I'm available when you need me. Your business matters, and you'll get real support from a real person.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section pricing">
+        <div class="pricing-highlight">Limited Time: Get Online for Just $250</div>
+        <h2 class="section-title">Simple Pricing. Zero Surprises.</h2>
+        <p class="section-subtitle">Everything you need to establish your online presence. One price, no games.</p>
+        
+        <div class="pricing-card">
+            <div class="pricing-badge">Best Value</div>
+            <div class="price-container">
+                <div class="price">$250</div>
+                <div class="price-subtext">One-time setup fee - that's it</div>
+            </div>
+            
+            <div class="price-comparison">
+                Compare to: Most agencies charge $2,000-$5,000 for the same service
+            </div>
+            
+            <div style="background: #e8f5e9; padding: 1rem; border-radius: 10px; margin: 1.5rem 0; text-align: center; font-size: 1rem; color: #2e7d32; border: 2px solid #4caf50; font-weight: 600;">
+                If you don't like the first draft, you don't pay.
+            </div>
+            
+            <ul class="pricing-features">
+                <li>Professional custom website design tailored to your business</li>
+                <li>Mobile-responsive layout (looks perfect on all devices)</li>
+                <li>One full year of reliable hosting on Azure</li>
+                <li>SSL security certificate (the padlock in the browser)</li>
+                <li>Contact form that actually works</li>
+                <li>Google Maps integration</li>
+                <li>Basic SEO optimization (so customers can find you)</li>
+                <li>Up to 5 pages of content (additional pages available if needed)</li>
+                <li>Same-day deployment available</li>
+                <li>Two revision rounds included</li>
+                <li>Direct support when you need it</li>
+            </ul>
+            
+            <a href="tel:+12514855686" class="cta-button" style="width: 100%; text-align: center; margin-top: 1rem;">Call to Get Started: (251) 485-5686</a>
+        </div>
+
+        <div class="value-props">
+            <div class="value-prop">
+                <span class="value-prop-number">$250</span>
+                <span class="value-prop-text">Total Cost</span>
+            </div>
+            <div class="value-prop">
+                <span class="value-prop-number">24hrs</span>
+                <span class="value-prop-text">Average Deploy Time</span>
+            </div>
+            <div class="value-prop">
+                <span class="value-prop-number">365</span>
+                <span class="value-prop-text">Days Hosting Included</span>
+            </div>
+            <div class="value-prop">
+                <span class="value-prop-number">24/7</span>
+                <span class="value-prop-text">On-Call Support</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="section process">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">From first call to live website in 4 simple steps</p>
+        
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3>Quick Consultation</h3>
+                <p>We talk for 15-30 minutes about your business, your customers, and what you need. No sales pitch, just planning.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3>Rapid Design</h3>
+                <p>I build your site based on our conversation. You'll see the first draft within 24-48 hours, sometimes same-day.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>Your Feedback</h3>
+                <p>Review the site and tell me what to change. We refine it together until it's exactly what you want.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3>Go Live</h3>
+                <p>Once you're happy, I deploy your site to Azure and it's live for the world to see. You're officially online.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section credibility">
+        <div class="credibility-content">
+            <h2 class="section-title">Big-Company Experience. Small-Business Pricing.</h2>
+            <p style="font-size: 1.2rem; margin: 2rem 0;">You're not getting an amateur. You're getting someone who managed infrastructure for the nation's largest privately-owned telecom company.</p>
+            
+            <div style="margin: 3rem 0;">
+                <span class="credibility-stat">14,500+</span>
+                <p>Hosted networks managed</p>
+            </div>
+            
+            <div style="margin: 3rem 0;">
+                <span class="credibility-stat">250,000+</span>
+                <p>Network endpoints under my watch</p>
+            </div>
+            
+            <p style="font-size: 1.1rem; margin-top: 2rem; opacity: 0.9;">I led support operations for big-company infrastructure. Now I'm bringing that same level of quality to Gulf Coast small businesses at a price that makes sense.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <h2 class="section-title">Ready to Get Your Business Online?</h2>
+        <p style="font-size: 1.3rem; margin-bottom: 1rem;">Stop losing customers to competitors who have websites. Let's fix that today.</p>
+        
+        <div class="contact-methods">
+            <div class="contact-card">
+                <div class="contact-icon">📞</div>
+                <h3>Call or Text</h3>
+                <a href="tel:+12514855686">(251) 485-5686</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <a href="/cdn-cgi/l/email-protection#186b6c7d6e7d76586b6c7d6e7d7675797676367177"><span class="__cf_email__" data-cfemail="7407001102111a3407001102111a19151a1a5a1d1b">[email&#160;protected]</span></a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3>Service Area</h3>
+                <p style="color: white;">Mobile, Pensacola, Biloxi & surrounding Gulf Coast region</p>
+            </div>
+        </div>
+
+        <div class="availability-badge">
+            🟢 Available Now - Ready to Help
+        </div>
+
+        <p style="font-size: 1.1rem; margin-top: 3rem; opacity: 0.9;">No automated systems. No ticket queues. You call, I answer. Let's build something great together.</p>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-tagline">"We build the web that finds your customers."</div>
+            <p style="font-size: 1.1rem; margin-bottom: 1rem;"><strong>Arachnid Networks</strong></p>
+            <p style="opacity: 0.8;">Professional Web Development & IT Solutions for the Gulf Coast</p>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.6;">Operating under CoastLink Solutions | Arachnid Networks™ Registration Pending</p>
+            <p style="margin-top: 0.5rem; opaci

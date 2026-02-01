@@ -1,0 +1,4 @@
+Contact: mailto:steven@stevenmann.io
+Preferred-Languages: en
+Canonical: https://arachnidnetworks.com/.well-known/security.txt
+
